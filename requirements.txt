@@ -1,0 +1,26 @@
+# --- Ingestion / retrieval ---
+beautifulsoup4>=4.12
+pandas>=2.0
+scikit-learn>=1.3
+chromadb>=0.5
+sentence-transformers>=3.0   # only needed if EMBEDDING_BACKEND=sbert
+
+# --- LLM ---
+anthropic>=0.40
+
+# --- MCP ---
+mcp>=1.2
+
+# --- Guardrails ---
+guardrails-ai>=0.5
+
+# --- Observability ---
+langfuse>=2.50
+
+# --- API layer (for future Streamlit frontend) ---
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2.7
+
+# --- Config ---
+python-dotenv>=1.0
