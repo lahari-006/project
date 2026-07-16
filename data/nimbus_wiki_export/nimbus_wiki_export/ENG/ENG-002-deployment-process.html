@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Deployment Process</title>
+<meta name="confluence-page-id" content="ENG-002">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-03-20">
+<meta name="tags" content="deployment, cicd, devops">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-002 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-03-20</p>
+</div>
+<div class="page-content">
+<h1>Deployment Process</h1>
+<p><em>Current process, effective since the CI/CD migration in Q1 2026. This supersedes the old Jenkins-based process.</em></p>
+<h2>Pipeline</h2>
+<p>All services deploy via <strong>GitHub Actions</strong>. Merging to <code>main</code> automatically deploys to staging. Production deploys require a manual approval gate from a service owner.</p>
+<pre><code>
+# Trigger a production deploy manually
+gh workflow run deploy-prod.yml -f service=billing-service -f version=v2.4.1
+</code></pre>
+<h2>Rollback</h2>
+<p>Rollbacks are one command and take effect within ~90 seconds:</p>
+<pre><code>
+gh workflow run rollback-prod.yml -f service=billing-service -f target_version=v2.4.0
+</code></pre>
+<h2>Required Checks Before Merge</h2>
+<ul>
+<li>Unit + integration tests pass</li>
+<li>Security scan (Snyk) passes</li>
+<li>At least one approving code review</li>
+</ul>
+</div>
+</body>
+</html>

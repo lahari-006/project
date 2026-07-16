@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Local Dev Environment Setup</title>
+<meta name="confluence-page-id" content="ENG-010">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-02-01">
+<meta name="tags" content="setup, local dev">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-010 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-02-01</p>
+</div>
+<div class="page-content">
+<h1>Local Dev Environment Setup</h1>
+<pre><code>
+git clone git@github.com:nimbuscloud/platform.git
+cd platform
+make bootstrap   # installs deps, sets up pre-commit hooks
+docker compose up -d   # starts local postgres, redis, kafka
+make run SERVICE=billing-service
+</code></pre>
+<p>Local services are available at <code>http://localhost:8080</code> by default. See individual service runbooks for service-specific env vars.</p>
+</div>
+</body>
+</html>

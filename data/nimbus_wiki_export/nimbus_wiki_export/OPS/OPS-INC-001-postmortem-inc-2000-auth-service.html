@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Postmortem: INC-2000 - auth-service</title>
+<meta name="confluence-page-id" content="OPS-INC-001">
+<meta name="confluence-space" content="OPS">
+<meta name="confluence-space-name" content="Operations">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-01-01">
+<meta name="tags" content="postmortem, incident, auth-service">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Operations (OPS) &nbsp;|&nbsp; <strong>Page ID:</strong> OPS-INC-001 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-01-01</p>
+</div>
+<div class="page-content">
+<h1>Postmortem: INC-2000 - auth-service</h1>
+<h2>Summary</h2>
+<p>Severity: SEV1. Duration: 55 minutes. Service affected: auth-service.</p>
+<h2>Root Cause</h2>
+<p>The incident was caused when a bad deploy introduced a null-pointer bug in the request handler.</p>
+<h2>Impact</h2>
+<p>Approximately 5% of requests to auth-service returned errors or elevated latency during the incident window.</p>
+<h2>Resolution</h2>
+<p>The on-call engineer mitigated by rolling back the most recent deploy and restarting affected pods. Full resolution confirmed via dashboard recovery.</p>
+<h2>Follow-up Actions</h2>
+<ul>
+<li>Add a regression test covering this failure mode</li>
+<li>Add an alert threshold to catch this earlier next time</li>
+</ul>
+</div>
+</body>
+</html>

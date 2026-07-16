@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Incident Response Runbook</title>
+<meta name="confluence-page-id" content="ENG-007">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-03-05">
+<meta name="tags" content="incident, oncall, runbook">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-007 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-03-05</p>
+</div>
+<div class="page-content">
+<h1>Incident Response Runbook</h1>
+<h2>Severity Levels</h2>
+<table>
+<tr><th>Sev</th><th>Definition</th><th>Response Time</th></tr>
+<tr><td>SEV1</td><td>Full outage or data loss</td><td>Immediate, page on-call</td></tr>
+<tr><td>SEV2</td><td>Major feature degraded</td><td>15 min</td></tr>
+<tr><td>SEV3</td><td>Minor issue, workaround exists</td><td>Next business day</td></tr>
+</table>
+<h2>Process</h2>
+<ol>
+<li>Declare incident in #incidents Slack channel with severity</li>
+<li>Assign an Incident Commander (IC)</li>
+<li>IC coordinates mitigation; do not attempt to write the postmortem during active mitigation</li>
+<li>Once resolved, file a postmortem within 48 hours</li>
+</ol>
+</div>
+</body>
+</html>

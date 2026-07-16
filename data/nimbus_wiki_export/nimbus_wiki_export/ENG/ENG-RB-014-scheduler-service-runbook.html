@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scheduler-service Runbook</title>
+<meta name="confluence-page-id" content="ENG-RB-014">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-02-10">
+<meta name="tags" content="runbook, scheduler-service">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-RB-014 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-02-10</p>
+</div>
+<div class="page-content">
+<h1>scheduler-service Runbook</h1>
+<h2>Overview</h2>
+<p>scheduler-service is owned by Team B and written in Python. It is responsible for cron-style job scheduling across the platform.</p>
+<h2>Restart Procedure</h2>
+<pre><code>
+kubectl rollout restart deployment/scheduler-service -n production
+</code></pre>
+<h2>Common Alerts</h2>
+<table>
+<tr><th>Alert</th><th>Likely Cause</th><th>Action</th></tr>
+<tr><td>HighLatency</td><td>Downstream dependency slow</td><td>Check dependency dashboards, consider circuit breaker</td></tr>
+<tr><td>ErrorRateSpike</td><td>Bad deploy or upstream schema change</td><td>Check recent deploys, consider rollback</td></tr>
+</table>
+<h2>Escalation</h2>
+<p>Primary on-call: Team B rotation. Escalate to Team B lead if unresolved after 30 minutes.</p>
+</div>
+</body>
+</html>

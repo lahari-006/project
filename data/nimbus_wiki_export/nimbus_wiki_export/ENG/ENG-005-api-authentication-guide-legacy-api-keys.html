@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>API Authentication Guide (Legacy API Keys)</title>
+<meta name="confluence-page-id" content="ENG-005">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="outdated">
+<meta name="last-updated" content="2021-05-30">
+<meta name="tags" content="api, auth, legacy">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-005 &nbsp;|&nbsp; <strong>Status:</strong> outdated &nbsp;|&nbsp; <strong>Last updated:</strong> 2021-05-30</p>
+</div>
+<div class="page-content">
+<h1>API Authentication Guide (Legacy API Keys)</h1>
+<p><em>Legacy method. API keys were fully deprecated and no longer function as of the OAuth2 migration.</em></p>
+<h2>Overview</h2>
+<p>API calls were authenticated using a static API key passed in the header:</p>
+<pre><code>
+curl https://api.nimbuscloud.io/v1/billing \
+  -H "X-API-Key: nk_live_abc123..."
+</code></pre>
+<p>Keys did not expire and were rotated manually by request to the platform team.</p>
+</div>
+</body>
+</html>

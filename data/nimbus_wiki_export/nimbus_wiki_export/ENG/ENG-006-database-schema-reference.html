@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Database Schema Reference</title>
+<meta name="confluence-page-id" content="ENG-006">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-01-22">
+<meta name="tags" content="database, schema, reference">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-006 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-01-22</p>
+</div>
+<div class="page-content">
+<h1>Database Schema Reference</h1>
+<p>Core tables in the primary PostgreSQL cluster (<code>nimbus-core-db</code>).</p>
+<table>
+<tr><th>Table</th><th>Owning Service</th><th>Notes</th></tr>
+<tr><td>users</td><td>user-profile-service</td><td>Soft-deletes only, never hard delete</td></tr>
+<tr><td>invoices</td><td>billing-service</td><td>Partitioned by month</td></tr>
+<tr><td>notifications</td><td>notification-service</td><td>90-day retention</td></tr>
+<tr><td>audit_events</td><td>audit-log-service</td><td>Append-only, 7-year retention</td></tr>
+</table>
+<p>Schema migrations are managed via Flyway and must be reviewed by the data platform team for any table over 10M rows.</p>
+</div>
+</body>
+</html>

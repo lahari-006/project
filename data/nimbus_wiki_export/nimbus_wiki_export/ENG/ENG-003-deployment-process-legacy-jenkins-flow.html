@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Deployment Process (Legacy Jenkins Flow)</title>
+<meta name="confluence-page-id" content="ENG-003">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="deprecated">
+<meta name="last-updated" content="2022-09-11">
+<meta name="tags" content="deployment, legacy, jenkins">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-003 &nbsp;|&nbsp; <strong>Status:</strong> deprecated &nbsp;|&nbsp; <strong>Last updated:</strong> 2022-09-11</p>
+</div>
+<div class="page-content">
+<h1>Deployment Process (Legacy Jenkins Flow)</h1>
+<p><em>This process is deprecated and no longer in use, retained for historical reference only.</em></p>
+<h2>Pipeline</h2>
+<p>Deploys were triggered through <strong>Jenkins</strong>. Engineers manually kicked off a Jenkins job after merging to <code>master</code>, and production promotion required filing a change-request ticket in Jira, approved by a release manager.</p>
+<pre><code>
+# Old Jenkins CLI trigger (no longer functional)
+jenkins-cli build deploy-prod-job -p SERVICE=billing-service -p VERSION=2.1.0
+</code></pre>
+<h2>Rollback</h2>
+<p>Rollbacks required re-running the previous Jenkins build manually, typically taking 15-20 minutes.</p>
+</div>
+</body>
+</html>

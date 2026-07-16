@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>System Architecture Overview</title>
+<meta name="confluence-page-id" content="ENG-001">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-04-02">
+<meta name="tags" content="architecture, overview">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-001 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-04-02</p>
+</div>
+<div class="page-content">
+<h1>System Architecture Overview</h1>
+<p>Nimbus Cloud Systems runs a microservices architecture on AWS, with services communicating primarily over gRPC internally and REST/GraphQL externally.</p>
+<h2>High-Level Layout</h2>
+<ul>
+<li><strong>Gateway API</strong> - public-facing entry point, handles auth and rate limiting</li>
+<li><strong>Core services</strong> - billing, search, notifications, user-profile (see ENG-011 for the full directory)</li>
+<li><strong>Data layer</strong> - PostgreSQL (transactional), Redis (cache/queues), S3 (blob storage)</li>
+<li><strong>Event bus</strong> - Kafka, used for async workflows (billing events, notification triggers)</li>
+</ul>
+<h2>Environments</h2>
+<table>
+<tr><th>Env</th><th>Purpose</th><th>Deploy Cadence</th></tr>
+<tr><td>dev</td><td>Feature branches</td><td>On push</td></tr>
+<tr><td>staging</td><td>Pre-prod validation</td><td>On merge to main</td></tr>
+<tr><td>prod</td><td>Live traffic</td><td>Manual promote, twice/week</td></tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rate Limiting & API Quotas</title>
+<meta name="confluence-page-id" content="ENG-014">
+<meta name="confluence-space" content="ENG">
+<meta name="confluence-space-name" content="Engineering">
+<meta name="status" content="current">
+<meta name="last-updated" content="2026-01-30">
+<meta name="tags" content="api, rate limiting">
+</head>
+<body>
+<div class="page-metadata">
+<p><strong>Space:</strong> Engineering (ENG) &nbsp;|&nbsp; <strong>Page ID:</strong> ENG-014 &nbsp;|&nbsp; <strong>Status:</strong> current &nbsp;|&nbsp; <strong>Last updated:</strong> 2026-01-30</p>
+</div>
+<div class="page-content">
+<h1>Rate Limiting &amp; API Quotas</h1>
+<table>
+<tr><th>Plan</th><th>Requests/min</th><th>Burst</th></tr>
+<tr><td>Free</td><td>60</td><td>100</td></tr>
+<tr><td>Pro</td><td>600</td><td>1000</td></tr>
+<tr><td>Enterprise</td><td>Custom</td><td>Custom</td></tr>
+</table>
+<p>Rate limits are enforced at the Gateway API using a token-bucket algorithm. Exceeding limits returns HTTP 429 with a <code>Retry-After</code> header.</p>
+</div>
+</body>
+</html>
