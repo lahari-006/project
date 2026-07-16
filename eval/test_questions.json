@@ -1,0 +1,58 @@
+[
+  {
+    "question": "Who owns the billing-service and what programming language is it written in?",
+    "ground_truth": "billing-service is owned by Team B and written in Python.",
+    "source_page_id": "ENG-RB-002",
+    "source_space": "ENG",
+    "source_status": "current"
+  },
+  {
+    "question": "How were deployments triggered in the legacy Jenkins flow?",
+    "ground_truth": "Engineers manually kicked off a Jenkins job after merging to master.",
+    "source_page_id": "ENG-003",
+    "source_space": "ENG",
+    "source_status": "deprecated"
+  },
+  {
+    "question": "How were API calls authenticated using the Legacy API Keys?",
+    "ground_truth": "API calls were authenticated using a static API key passed in the header.",
+    "source_page_id": "ENG-005",
+    "source_space": "ENG",
+    "source_status": "outdated"
+  },
+  {
+    "question": "What should I refer to for detailed information on my benefits?",
+    "ground_truth": "linked provider documents",
+    "source_page_id": "HR-006",
+    "source_space": "HR",
+    "source_status": "current"
+  },
+  {
+    "question": "How many unused PTO days can be carried over into the next calendar year?",
+    "ground_truth": "up to 5",
+    "source_page_id": "HR-002",
+    "source_space": "HR",
+    "source_status": "outdated"
+  },
+  {
+    "question": "What is the current requirement for Multi-Factor Authentication (MFA) for all accounts?",
+    "ground_truth": "All accounts require MFA via the Okta Verify app.",
+    "source_page_id": "ITS-004",
+    "source_space": "ITS",
+    "source_status": "current"
+  },
+  {
+    "question": "What was the leadership's commitment regarding the follow-up after the security incident?",
+    "ground_truth": "leadership committed to a follow-up email within one week",
+    "source_page_id": "OPS-AH-007",
+    "source_space": "OPS",
+    "source_status": "current"
+  },
+  {
+    "question": "When was the webhook retry with exponential backoff feature added to production?",
+    "ground_truth": "2026-01-10",
+    "source_page_id": "PROD-CL-013",
+    "source_space": "PROD",
+    "source_status": "current"
+  }
+]
